@@ -14,6 +14,10 @@
 		BE6B818322473DCE00FCA327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6B818222473DCE00FCA327 /* Assets.xcassets */; };
 		BE6B818622473DCE00FCA327 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6B818422473DCE00FCA327 /* LaunchScreen.storyboard */; };
 		BE6B819122473DCE00FCA327 /* SplitWiseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B819022473DCE00FCA327 /* SplitWiseTests.swift */; };
+		BE6B81A02247951E00FCA327 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B819F2247951E00FCA327 /* PersistenceService.swift */; };
+		BE6B81A12247951E00FCA327 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B819F2247951E00FCA327 /* PersistenceService.swift */; };
+		BE6B81A6224796B800FCA327 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B81A5224796B800FCA327 /* Person.swift */; };
+		BE6B81A7224796B800FCA327 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B81A5224796B800FCA327 /* Person.swift */; };
 		CD9DAD0AECBAB0A458F12BA9 /* Pods_SplitWiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CA5C4A54D26C6DC8146A3B /* Pods_SplitWiseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -44,6 +48,8 @@
 		BE6B818C22473DCE00FCA327 /* SplitWiseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SplitWiseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6B819022473DCE00FCA327 /* SplitWiseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplitWiseTests.swift; sourceTree = "<group>"; };
 		BE6B819222473DCE00FCA327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE6B819F2247951E00FCA327 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		BE6B81A5224796B800FCA327 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,7 +80,6 @@
 				185BD43B61390C034345DB8B /* Pods-SplitWiseTests.debug.xcconfig */,
 				02176D5CA5128895103FDEF9 /* Pods-SplitWiseTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -101,6 +106,7 @@
 		BE6B817A22473DCD00FCA327 /* SplitWise */ = {
 			isa = PBXGroup;
 			children = (
+				BE6B819B224794A900FCA327 /* Classes */,
 				BE6B817B22473DCD00FCA327 /* AppDelegate.swift */,
 				BE6B817D22473DCD00FCA327 /* ViewController.swift */,
 				BE6B817F22473DCD00FCA327 /* Main.storyboard */,
@@ -118,6 +124,39 @@
 				BE6B819222473DCE00FCA327 /* Info.plist */,
 			);
 			path = SplitWiseTests;
+			sourceTree = "<group>";
+		};
+		BE6B819B224794A900FCA327 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BE6B81A22247966F00FCA327 /* Models */,
+				BE6B819E224794C100FCA327 /* Services */,
+				BE6B819C224794B200FCA327 /* Components */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		BE6B819C224794B200FCA327 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		BE6B819E224794C100FCA327 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				BE6B819F2247951E00FCA327 /* PersistenceService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		BE6B81A22247966F00FCA327 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				BE6B81A5224796B800FCA327 /* Person.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		F88527BB4DE143B194EE3A44 /* Frameworks */ = {
@@ -342,6 +381,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE6B817E22473DCD00FCA327 /* ViewController.swift in Sources */,
+				BE6B81A02247951E00FCA327 /* PersistenceService.swift in Sources */,
+				BE6B81A6224796B800FCA327 /* Person.swift in Sources */,
 				BE6B817C22473DCD00FCA327 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -350,7 +391,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6B81A7224796B800FCA327 /* Person.swift in Sources */,
 				BE6B819122473DCE00FCA327 /* SplitWiseTests.swift in Sources */,
+				BE6B81A12247951E00FCA327 /* PersistenceService.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
