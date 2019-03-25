@@ -1,6 +1,0 @@
-framework module Pods_SplitWiseTests {
-  umbrella header "Pods-SplitWiseTests-umbrella.h"
-
-  export *
-  module * { export * }
-}
