@@ -14,12 +14,12 @@ extension Scene {
         switch self {
         case .groups(let viewModel):
             let nav = storyboard.instantiateViewController(withIdentifier: "Groups") as! UINavigationController
-            var vc = nav.viewControllers.first as! GroupsViewController
+            let vc = nav.viewControllers.first as! GroupsViewController
             vc.bindViewModel(to: viewModel)
             return nav
         case .editGroup(let viewModel):
             let nav = storyboard.instantiateViewController(withIdentifier: "EditGroup") as! UINavigationController
-            var vc = nav.viewControllers.first as! EditGroupViewController
+            let vc = nav.viewControllers.first as! EditGroupViewController
             vc.bindViewModel(to: viewModel)
             return nav
         }

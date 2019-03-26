@@ -19,9 +19,7 @@ extension UIViewController {
             }))
             
             self.present(alert, animated: true, completion: nil)
-            return Disposables.create {
-                self.dismiss(animated: true, completion: nil)
-            }
+            return Disposables.create()
         })
     }
 }

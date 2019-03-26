@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import NSObject_Rx
+import Eureka
 
 class EditGroupViewModel: ViewModelType {
     struct Input {
@@ -28,6 +29,12 @@ class EditGroupViewModel: ViewModelType {
         var name: String
         var info: String?
     }
+    let form: Form
+    /// Name row
+    private let nameRow: TextRow
+
+    /// Phone row
+    private let infoRow: TextAreaRow
 
     // MARK: - Private properties
     private let nameSubject = BehaviorSubject<String>(value: "")
@@ -44,7 +51,7 @@ class EditGroupViewModel: ViewModelType {
         return nameSubject.asObservable().map { $0.count > 0 }
     }
 
-    private var GroupDataObservable: Observable<GroupData> {
+    private var groupDataObservable: Observable<GroupData> {
         return Observable.combineLatest(nameSubject.asObservable(), infoSubject.asObservable()) {
             name, info in
             return GroupData(name: name, info: info)
@@ -53,11 +60,11 @@ class EditGroupViewModel: ViewModelType {
 
     func validateData(data: GroupData) -> Observable<GroupData> {
         return Observable<GroupData>.create({ (observer) -> Disposable in
-            if data.name.isEmpty {
+            if self.form.validate().count == 0 {
+                observer.onNext(data)
+            } else {
                 observer.onError(GroupServiceError
                         .failedToCreateGroup(name: data.name, description: data.info))
-            } else {
-                observer.onNext(data)
             }
             observer.onCompleted()
             return Disposables.create()
@@ -68,6 +75,16 @@ class EditGroupViewModel: ViewModelType {
         if let group = group {
             self.group = group
         }
+        self.form = Form()
+        self.nameRow = TextRow() { row in
+            row.title = "Name"
+            row.placeholder = "Enter name here."
+        }
+        self.infoRow = TextAreaRow { row in
+            row.title = "Description"
+            row.placeholder = "Enter group's description here."
+        }
+
         self.sceneCoordinator = coordinator
         self.groupService = groupService
         input = Input(name: nameSubject.asObserver(),
@@ -82,7 +99,7 @@ class EditGroupViewModel: ViewModelType {
             }).disposed(by: disposeBag)
 
         self.saveButtonWasClickedSubject
-            .withLatestFrom(GroupDataObservable)
+            .withLatestFrom(self.groupDataObservable)
             .subscribe(onNext: { [weak self] (data) in
                 self?.createGroup(data: data)
             }).disposed(by: self.disposeBag)
@@ -98,5 +115,30 @@ class EditGroupViewModel: ViewModelType {
                 })
             .disposed(by: self.disposeBag)
     }
+    func createForm() {
+        form +++ Section()
+        <<< TextRow() { row in
+            row.title = "Name"
+            row.add(rule: RuleRequired())
+            row.placeholder = "Enter name here."
+            row.validationOptions = .validatesOnChange
+        }.onChange { (textRow) in
+            if let value = textRow.value {
+                self.nameSubject.onNext(value)
+            }
+        }.cellUpdate { cell, row in
+            if !row.isValid {
+                cell.titleLabel?.textColor = .red
+            }
+        }
+        <<< TextAreaRow { row in
+            row.title = "Description"
+            row.placeholder = "Enter group's description here."
+        }.onChange({ (textRow) in
+            if let value = textRow.value {
+                self.infoSubject.onNext(value)
+            }
+        })
 
+    }
 }

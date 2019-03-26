@@ -25,7 +25,7 @@ protocol GroupServiceType {
 }
 
 enum GroupServiceError: Error {
-    case failedToCreateGroup(name: String, description: String?)
+    case failedToCreateGroup(name: String?, description: String?)
 }
 
 

@@ -3,6 +3,7 @@ PODS:
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
   - Differentiator (3.1.0)
+  - Eureka (4.3.1)
   - "NSObject+Rx (4.4.1)":
     - RxSwift (~> 4.3)
   - Realm (3.13.1):
@@ -31,6 +32,7 @@ PODS:
 
 DEPENDENCIES:
   - Action (~> 3.4)
+  - Eureka
   - "NSObject+Rx (~> 4.1)"
   - RxBlocking (~> 4.0)
   - RxCocoa (~> 4.0)
@@ -43,6 +45,7 @@ SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Action
     - Differentiator
+    - Eureka
     - "NSObject+Rx"
     - Realm
     - RealmSwift
@@ -57,6 +60,7 @@ SPEC REPOS:
 SPEC CHECKSUMS:
   Action: 689181e4c3f6566844178d8a7da6fef39a9597fc
   Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
+  Eureka: 28ea296f06710f6745266b71f17862048941a32d
   "NSObject+Rx": 9884a92f19b610795c431e10b4e601913b59c9e9
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
   RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
@@ -68,6 +72,6 @@ SPEC CHECKSUMS:
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   RxTest: 6433d5b6229f5de424fa534bc22b5e6c38b0b671
 
-PODFILE CHECKSUM: 60ef34bef694fedc5ae87bf92d88a720435a6fa7
+PODFILE CHECKSUM: e4e0dd5ed95c284f4a98ba17970ef1a48d226d07
 
 COCOAPODS: 1.6.1
