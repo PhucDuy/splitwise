@@ -13,6 +13,8 @@ class Person: Object {
     @objc dynamic var uid: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var createdDate: Date = Date()
+    let group = LinkingObjects(fromType: Group.self, property: "persons")
+    
     static func createPerson(name: String, realm: Realm) -> Person {
         let person = Person()
         person.name = name
