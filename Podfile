@@ -9,6 +9,11 @@ target 'SplitWise' do
     pod 'RxSwift',    '~> 4.0'
     pod 'RxCocoa',    '~> 4.0'
     pod 'RxRealm'
+    pod 'RxDataSources', '~> 3.0'
+    pod 'Action', '~> 3.4'
+    pod 'NSObject+Rx', '~> 4.1'
+    pod 'Eureka'
+
 
   target 'SplitWiseTests' do
     inherit! :search_paths

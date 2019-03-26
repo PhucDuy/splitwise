@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6F8C86F4FFCBB0F7B49A26A6 /* Pods_SplitWise.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 15D81CB2E4B370DFA47F9CDD /* Pods_SplitWise.framework */; };
 		BE6B817C22473DCD00FCA327 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B817B22473DCD00FCA327 /* AppDelegate.swift */; };
-		BE6B817E22473DCD00FCA327 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B817D22473DCD00FCA327 /* ViewController.swift */; };
 		BE6B818122473DCD00FCA327 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6B817F22473DCD00FCA327 /* Main.storyboard */; };
 		BE6B818322473DCE00FCA327 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE6B818222473DCE00FCA327 /* Assets.xcassets */; };
 		BE6B818622473DCE00FCA327 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE6B818422473DCE00FCA327 /* LaunchScreen.storyboard */; };
@@ -18,6 +17,32 @@
 		BE6B81A12247951E00FCA327 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B819F2247951E00FCA327 /* PersistenceService.swift */; };
 		BE6B81A6224796B800FCA327 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B81A5224796B800FCA327 /* Person.swift */; };
 		BE6B81A7224796B800FCA327 /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6B81A5224796B800FCA327 /* Person.swift */; };
+		BE6D5FB22249F6D500DAAED0 /* ViewController+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FB12249F6D500DAAED0 /* ViewController+Additions.swift */; };
+		BE6D5FB5224A187100DAAED0 /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0560D2248CA0F0000D67B /* CoordinatorType.swift */; };
+		BE6D5FB6224A187500DAAED0 /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0560F2248CA330000D67B /* Scene.swift */; };
+		BE6D5FB7224A187500DAAED0 /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056112248CAA00000D67B /* SceneTransitionType.swift */; };
+		BE6D5FB8224A187500DAAED0 /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056132248CB1F0000D67B /* Scene+ViewController.swift */; };
+		BE6D5FB9224A187500DAAED0 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056152248CCF90000D67B /* SceneCoordinator.swift */; };
+		BE6D5FBA224A361300DAAED0 /* EditGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */; };
+		BEC055F622488D750000D67B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F522488D750000D67B /* Group.swift */; };
+		BEC055F722488D750000D67B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F522488D750000D67B /* Group.swift */; };
+		BEC055FA2248913C0000D67B /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F92248913C0000D67B /* GroupsViewController.swift */; };
+		BEC055FB2248913C0000D67B /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F92248913C0000D67B /* GroupsViewController.swift */; };
+		BEC055FE224893400000D67B /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055FD224893400000D67B /* GroupsViewModel.swift */; };
+		BEC055FF224893400000D67B /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055FD224893400000D67B /* GroupsViewModel.swift */; };
+		BEC056022248A2240000D67B /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056012248A2240000D67B /* BindableType.swift */; };
+		BEC056042248A4760000D67B /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056032248A4760000D67B /* GroupsService.swift */; };
+		BEC056052248A7010000D67B /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056032248A4760000D67B /* GroupsService.swift */; };
+		BEC056062248AEA50000D67B /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056012248A2240000D67B /* BindableType.swift */; };
+		BEC056082248BA7D0000D67B /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056072248BA7D0000D67B /* EditGroupViewController.swift */; };
+		BEC0560B2248C2320000D67B /* EditGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */; };
+		BEC0560E2248CA0F0000D67B /* CoordinatorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0560D2248CA0F0000D67B /* CoordinatorType.swift */; };
+		BEC056102248CA330000D67B /* Scene.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0560F2248CA330000D67B /* Scene.swift */; };
+		BEC056122248CAA00000D67B /* SceneTransitionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056112248CAA00000D67B /* SceneTransitionType.swift */; };
+		BEC056142248CB1F0000D67B /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056132248CB1F0000D67B /* Scene+ViewController.swift */; };
+		BEC056162248CCF90000D67B /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056152248CCF90000D67B /* SceneCoordinator.swift */; };
+		BEC056182248CF770000D67B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056172248CF770000D67B /* AppManager.swift */; };
+		BEC056192248CF770000D67B /* AppManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056172248CF770000D67B /* AppManager.swift */; };
 		CD9DAD0AECBAB0A458F12BA9 /* Pods_SplitWiseTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86CA5C4A54D26C6DC8146A3B /* Pods_SplitWiseTests.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,7 +65,6 @@
 		8C5B24CF01C7E420222E0468 /* Pods-SplitWise.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SplitWise.debug.xcconfig"; path = "Target Support Files/Pods-SplitWise/Pods-SplitWise.debug.xcconfig"; sourceTree = "<group>"; };
 		BE6B817822473DCD00FCA327 /* SplitWise.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SplitWise.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE6B817B22473DCD00FCA327 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		BE6B817D22473DCD00FCA327 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE6B818022473DCD00FCA327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		BE6B818222473DCE00FCA327 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE6B818522473DCE00FCA327 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -50,6 +74,20 @@
 		BE6B819222473DCE00FCA327 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE6B819F2247951E00FCA327 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		BE6B81A5224796B800FCA327 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
+		BE6D5FB12249F6D500DAAED0 /* ViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Additions.swift"; sourceTree = "<group>"; };
+		BEC055F522488D750000D67B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
+		BEC055F92248913C0000D67B /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
+		BEC055FD224893400000D67B /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
+		BEC056012248A2240000D67B /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
+		BEC056032248A4760000D67B /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		BEC056072248BA7D0000D67B /* EditGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewController.swift; sourceTree = "<group>"; };
+		BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewModel.swift; sourceTree = "<group>"; };
+		BEC0560D2248CA0F0000D67B /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
+		BEC0560F2248CA330000D67B /* Scene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Scene.swift; sourceTree = "<group>"; };
+		BEC056112248CAA00000D67B /* SceneTransitionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneTransitionType.swift; sourceTree = "<group>"; };
+		BEC056132248CB1F0000D67B /* Scene+ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Scene+ViewController.swift"; sourceTree = "<group>"; };
+		BEC056152248CCF90000D67B /* SceneCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneCoordinator.swift; sourceTree = "<group>"; };
+		BEC056172248CF770000D67B /* AppManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +146,6 @@
 			children = (
 				BE6B819B224794A900FCA327 /* Classes */,
 				BE6B817B22473DCD00FCA327 /* AppDelegate.swift */,
-				BE6B817D22473DCD00FCA327 /* ViewController.swift */,
 				BE6B817F22473DCD00FCA327 /* Main.storyboard */,
 				BE6B818222473DCE00FCA327 /* Assets.xcassets */,
 				BE6B818422473DCE00FCA327 /* LaunchScreen.storyboard */,
@@ -129,6 +166,9 @@
 		BE6B819B224794A900FCA327 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BEC0560C2248C9F10000D67B /* Coordinator */,
+				BEC056002248A1FC0000D67B /* Helper */,
+				BEC055FC224893200000D67B /* ViewModels */,
 				BE6B81A22247966F00FCA327 /* Models */,
 				BE6B819E224794C100FCA327 /* Services */,
 				BE6B819C224794B200FCA327 /* Components */,
@@ -139,6 +179,7 @@
 		BE6B819C224794B200FCA327 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BEC055F82248911F0000D67B /* Groups */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -147,6 +188,7 @@
 			isa = PBXGroup;
 			children = (
 				BE6B819F2247951E00FCA327 /* PersistenceService.swift */,
+				BEC056032248A4760000D67B /* GroupsService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -155,8 +197,49 @@
 			isa = PBXGroup;
 			children = (
 				BE6B81A5224796B800FCA327 /* Person.swift */,
+				BEC055F522488D750000D67B /* Group.swift */,
+				BEC056012248A2240000D67B /* BindableType.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		BEC055F82248911F0000D67B /* Groups */ = {
+			isa = PBXGroup;
+			children = (
+				BEC055F92248913C0000D67B /* GroupsViewController.swift */,
+				BEC056072248BA7D0000D67B /* EditGroupViewController.swift */,
+			);
+			path = Groups;
+			sourceTree = "<group>";
+		};
+		BEC055FC224893200000D67B /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				BEC055FD224893400000D67B /* GroupsViewModel.swift */,
+				BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		BEC056002248A1FC0000D67B /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				BEC056172248CF770000D67B /* AppManager.swift */,
+				BE6D5FB12249F6D500DAAED0 /* ViewController+Additions.swift */,
+			);
+			path = Helper;
+			sourceTree = "<group>";
+		};
+		BEC0560C2248C9F10000D67B /* Coordinator */ = {
+			isa = PBXGroup;
+			children = (
+				BEC0560D2248CA0F0000D67B /* CoordinatorType.swift */,
+				BEC0560F2248CA330000D67B /* Scene.swift */,
+				BEC056112248CAA00000D67B /* SceneTransitionType.swift */,
+				BEC056132248CB1F0000D67B /* Scene+ViewController.swift */,
+				BEC056152248CCF90000D67B /* SceneCoordinator.swift */,
+			);
+			path = Coordinator;
 			sourceTree = "<group>";
 		};
 		F88527BB4DE143B194EE3A44 /* Frameworks */ = {
@@ -300,10 +383,15 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SplitWise/Pods-SplitWise-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
+				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
@@ -311,10 +399,15 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
@@ -380,10 +473,23 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BE6B817E22473DCD00FCA327 /* ViewController.swift in Sources */,
 				BE6B81A02247951E00FCA327 /* PersistenceService.swift in Sources */,
+				BEC056142248CB1F0000D67B /* Scene+ViewController.swift in Sources */,
+				BEC055FA2248913C0000D67B /* GroupsViewController.swift in Sources */,
+				BEC055FE224893400000D67B /* GroupsViewModel.swift in Sources */,
+				BEC056022248A2240000D67B /* BindableType.swift in Sources */,
+				BEC0560B2248C2320000D67B /* EditGroupViewModel.swift in Sources */,
+				BEC056162248CCF90000D67B /* SceneCoordinator.swift in Sources */,
+				BEC056182248CF770000D67B /* AppManager.swift in Sources */,
+				BEC056082248BA7D0000D67B /* EditGroupViewController.swift in Sources */,
 				BE6B81A6224796B800FCA327 /* Person.swift in Sources */,
+				BEC0560E2248CA0F0000D67B /* CoordinatorType.swift in Sources */,
+				BEC056122248CAA00000D67B /* SceneTransitionType.swift in Sources */,
+				BEC056102248CA330000D67B /* Scene.swift in Sources */,
+				BEC055F622488D750000D67B /* Group.swift in Sources */,
 				BE6B817C22473DCD00FCA327 /* AppDelegate.swift in Sources */,
+				BEC056042248A4760000D67B /* GroupsService.swift in Sources */,
+				BE6D5FB22249F6D500DAAED0 /* ViewController+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -391,9 +497,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEC056062248AEA50000D67B /* BindableType.swift in Sources */,
 				BE6B81A7224796B800FCA327 /* Person.swift in Sources */,
 				BE6B819122473DCE00FCA327 /* SplitWiseTests.swift in Sources */,
+				BEC055FF224893400000D67B /* GroupsViewModel.swift in Sources */,
+				BE6D5FB5224A187100DAAED0 /* CoordinatorType.swift in Sources */,
+				BE6D5FB9224A187500DAAED0 /* SceneCoordinator.swift in Sources */,
+				BE6D5FB8224A187500DAAED0 /* Scene+ViewController.swift in Sources */,
 				BE6B81A12247951E00FCA327 /* PersistenceService.swift in Sources */,
+				BEC055F722488D750000D67B /* Group.swift in Sources */,
+				BE6D5FBA224A361300DAAED0 /* EditGroupViewModel.swift in Sources */,
+				BEC056192248CF770000D67B /* AppManager.swift in Sources */,
+				BEC056052248A7010000D67B /* GroupsService.swift in Sources */,
+				BEC055FB2248913C0000D67B /* GroupsViewController.swift in Sources */,
+				BE6D5FB6224A187500DAAED0 /* Scene.swift in Sources */,
+				BE6D5FB7224A187500DAAED0 /* SceneTransitionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
