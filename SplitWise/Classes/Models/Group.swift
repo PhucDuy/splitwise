@@ -8,16 +8,14 @@
 
 import UIKit
 import RealmSwift
-import RxDataSources
 
-typealias GroupSection = AnimatableSectionModel<String,Group>
 
 class Group: Object {
     @objc dynamic var uid: Int = 0
     @objc dynamic var name: String = ""
     @objc dynamic var info: String?
     @objc dynamic var createdDate: Date = Date()
-    let persons = List<Person>()
+    let members = List<Person>()
     override static func primaryKey() -> String? {
         return "uid"
     }
@@ -31,8 +29,3 @@ class Group: Object {
     }
 }
 
-extension Group : IdentifiableType {
-    var identity: Int {
-        return self.isInvalidated ? 0 : uid
-    }
-}

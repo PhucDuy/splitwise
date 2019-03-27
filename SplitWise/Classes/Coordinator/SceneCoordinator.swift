@@ -45,7 +45,7 @@ class SceneCoordinator: SceneCoordinatorType {
                     .sentMessage(#selector(UINavigationControllerDelegate.navigationController(_: didShow: animated:)))
                     .map { _ in }
                     .bind(to: subject)
-                navigationController.pushViewController(viewController, animated: true)
+                navigationController.show(viewController, sender: nil)
                 currentViewController = SceneCoordinator.actualViewController(for: viewController)
 
             case .modal:

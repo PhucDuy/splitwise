@@ -13,14 +13,6 @@ import RealmSwift
 protocol GroupServiceType {
     @discardableResult
     func createGroup(name: String, description: String?) -> Observable<Group>
-
-//    @discardableResult
-//    func delete(group: Group) -> Observable<Void>
-//
-//    @discardableResult
-//    func update(group: Group, title: String, description: String?) -> Observable<TaskItem>
-//
-
     func groups() -> Observable<Results<Group>>
 }
 

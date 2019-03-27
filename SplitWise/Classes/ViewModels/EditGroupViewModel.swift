@@ -46,7 +46,7 @@ class EditGroupViewModel: ViewModelType {
     private var group: Group?
     private let disposeBag = DisposeBag()
     private let groupService: GroupServiceType
-    private let sceneCoordinator: SceneCoordinatorType
+    internal let sceneCoordinator: SceneCoordinatorType
     private var nameValid: Observable<Bool> {
         return nameSubject.asObservable().map { $0.count > 0 }
     }

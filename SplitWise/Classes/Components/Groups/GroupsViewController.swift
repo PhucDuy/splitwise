@@ -8,7 +8,8 @@
 
 import UIKit
 import RxSwift
-import RxDataSources
+import RxRealmDataSources
+import RxRealm
 import Action
 import NSObject_Rx
 
@@ -19,16 +20,17 @@ class GroupsViewController: UIViewController, BindableType {
     // MARK: - Properties
     var viewModel: GroupsViewModel!
 
-    let groupCellIdentifier = "Cell"
+    let cellIdentifier = "Cell"
     let addGroupSegue = "AddGroupSegue"
-    lazy var dataSource: RxTableViewSectionedReloadDataSource<GroupSection> = {
-        return RxTableViewSectionedReloadDataSource<GroupSection>(configureCell: {
-            [unowned self] dataSource, tableView, indexPath, item in
-            let cell = tableView.dequeueReusableCell(withIdentifier: self.groupCellIdentifier, for: indexPath)
-            cell.textLabel?.text = item.name
+    lazy var dataSource: RxTableViewRealmDataSource<Group> = {
+        return RxTableViewRealmDataSource<Group>(cellIdentifier: cellIdentifier) { (dataSource, tableView, indexPath, group) -> UITableViewCell in
+            let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath)
+            cell.textLabel?.text = group.name
+            cell.detailTextLabel?.text = group.info
             return cell
-        })
+        }
     }()
+
 
     // MARK: - View Life Cycle
     override func viewDidLoad() {
@@ -37,17 +39,17 @@ class GroupsViewController: UIViewController, BindableType {
     }
 
     // MARK: - Action
-    
+
     // MARK: - BindableType
     func bindViewModel() {
         addButton.rx.tap.asObservable()
             .subscribe(viewModel.input.addGroupButtonWasClicked)
             .disposed(by: self.rx.disposeBag)
-        
-        viewModel.sectionsedItems
-            .bind(to: tableView.rx.items(dataSource: dataSource))
-            .disposed(by: self.rx.disposeBag)
+        viewModel.groups.subscribe(onNext: { [unowned self] (groups) in
+            Observable.changeset(from: groups).share().bind(to: self.tableView.rx.realmChanges(self.dataSource)).disposed(by: self.rx.disposeBag)
+        }).disposed(by: self.rx.disposeBag)
+        tableView.rx.realmModelSelected(Group.self)
+            .subscribe(viewModel.input.groupWasSelected).disposed(by: self.rx.disposeBag)
     }
-    // MARK: - Navigation
 }
 

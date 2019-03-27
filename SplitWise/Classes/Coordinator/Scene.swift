@@ -10,5 +10,7 @@ import Foundation
 enum Scene {
     case groups(GroupsViewModel)
     case editGroup(EditGroupViewModel)
+    case members(MembersViewModel)
+    case group(GroupViewModel)
 }
 

@@ -24,6 +24,20 @@
 		BE6D5FB8224A187500DAAED0 /* Scene+ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056132248CB1F0000D67B /* Scene+ViewController.swift */; };
 		BE6D5FB9224A187500DAAED0 /* SceneCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056152248CCF90000D67B /* SceneCoordinator.swift */; };
 		BE6D5FBA224A361300DAAED0 /* EditGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */; };
+		BE6D5FBD224A73D200DAAED0 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FBC224A73D200DAAED0 /* MembersViewController.swift */; };
+		BE6D5FBE224A73D500DAAED0 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FBC224A73D200DAAED0 /* MembersViewController.swift */; };
+		BE6D5FC0224A740900DAAED0 /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FBF224A740900DAAED0 /* MembersViewModel.swift */; };
+		BE6D5FC2224A745E00DAAED0 /* MemberService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FC1224A745E00DAAED0 /* MemberService.swift */; };
+		BE6D5FC3224A7B6300DAAED0 /* MembersViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FBF224A740900DAAED0 /* MembersViewModel.swift */; };
+		BE6D5FC4224A7D0500DAAED0 /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056072248BA7D0000D67B /* EditGroupViewController.swift */; };
+		BE6D5FC6224A805100DAAED0 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FC5224A805100DAAED0 /* GroupDetailViewController.swift */; };
+		BE6D5FC7224A805100DAAED0 /* GroupDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FC5224A805100DAAED0 /* GroupDetailViewController.swift */; };
+		BE6D5FC9224A838500DAAED0 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FC8224A838500DAAED0 /* GroupViewModel.swift */; };
+		BE6D5FCA224A838500DAAED0 /* GroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FC8224A838500DAAED0 /* GroupViewModel.swift */; };
+		BE6D5FD1224B347500DAAED0 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD0224B347500DAAED0 /* UIBarButtonItem.swift */; };
+		BE6D5FD2224B347500DAAED0 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD0224B347500DAAED0 /* UIBarButtonItem.swift */; };
+		BE6D5FD4224B42CF00DAAED0 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD3224B42CE00DAAED0 /* UINavigationController+Rx.swift */; };
+		BE6D5FD5224B42CF00DAAED0 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD3224B42CE00DAAED0 /* UINavigationController+Rx.swift */; };
 		BEC055F622488D750000D67B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F522488D750000D67B /* Group.swift */; };
 		BEC055F722488D750000D67B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F522488D750000D67B /* Group.swift */; };
 		BEC055FA2248913C0000D67B /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F92248913C0000D67B /* GroupsViewController.swift */; };
@@ -31,8 +45,8 @@
 		BEC055FE224893400000D67B /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055FD224893400000D67B /* GroupsViewModel.swift */; };
 		BEC055FF224893400000D67B /* GroupsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055FD224893400000D67B /* GroupsViewModel.swift */; };
 		BEC056022248A2240000D67B /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056012248A2240000D67B /* BindableType.swift */; };
-		BEC056042248A4760000D67B /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056032248A4760000D67B /* GroupsService.swift */; };
-		BEC056052248A7010000D67B /* GroupsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056032248A4760000D67B /* GroupsService.swift */; };
+		BEC056042248A4760000D67B /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056032248A4760000D67B /* GroupService.swift */; };
+		BEC056052248A7010000D67B /* GroupService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056032248A4760000D67B /* GroupService.swift */; };
 		BEC056062248AEA50000D67B /* BindableType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056012248A2240000D67B /* BindableType.swift */; };
 		BEC056082248BA7D0000D67B /* EditGroupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC056072248BA7D0000D67B /* EditGroupViewController.swift */; };
 		BEC0560B2248C2320000D67B /* EditGroupViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */; };
@@ -75,11 +89,18 @@
 		BE6B819F2247951E00FCA327 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 		BE6B81A5224796B800FCA327 /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		BE6D5FB12249F6D500DAAED0 /* ViewController+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewController+Additions.swift"; sourceTree = "<group>"; };
+		BE6D5FBC224A73D200DAAED0 /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
+		BE6D5FBF224A740900DAAED0 /* MembersViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewModel.swift; sourceTree = "<group>"; };
+		BE6D5FC1224A745E00DAAED0 /* MemberService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberService.swift; sourceTree = "<group>"; };
+		BE6D5FC5224A805100DAAED0 /* GroupDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupDetailViewController.swift; sourceTree = "<group>"; };
+		BE6D5FC8224A838500DAAED0 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
+		BE6D5FD0224B347500DAAED0 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
+		BE6D5FD3224B42CE00DAAED0 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
 		BEC055F522488D750000D67B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		BEC055F92248913C0000D67B /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		BEC055FD224893400000D67B /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
 		BEC056012248A2240000D67B /* BindableType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BindableType.swift; sourceTree = "<group>"; };
-		BEC056032248A4760000D67B /* GroupsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsService.swift; sourceTree = "<group>"; };
+		BEC056032248A4760000D67B /* GroupService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupService.swift; sourceTree = "<group>"; };
 		BEC056072248BA7D0000D67B /* EditGroupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewController.swift; sourceTree = "<group>"; };
 		BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditGroupViewModel.swift; sourceTree = "<group>"; };
 		BEC0560D2248CA0F0000D67B /* CoordinatorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoordinatorType.swift; sourceTree = "<group>"; };
@@ -166,6 +187,7 @@
 		BE6B819B224794A900FCA327 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				BE6D5FCF224B346400DAAED0 /* Extensions */,
 				BEC0560C2248C9F10000D67B /* Coordinator */,
 				BEC056002248A1FC0000D67B /* Helper */,
 				BEC055FC224893200000D67B /* ViewModels */,
@@ -179,6 +201,7 @@
 		BE6B819C224794B200FCA327 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BE6D5FBB224A73C200DAAED0 /* Members */,
 				BEC055F82248911F0000D67B /* Groups */,
 			);
 			path = Components;
@@ -188,7 +211,8 @@
 			isa = PBXGroup;
 			children = (
 				BE6B819F2247951E00FCA327 /* PersistenceService.swift */,
-				BEC056032248A4760000D67B /* GroupsService.swift */,
+				BEC056032248A4760000D67B /* GroupService.swift */,
+				BE6D5FC1224A745E00DAAED0 /* MemberService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -203,11 +227,29 @@
 			path = Models;
 			sourceTree = "<group>";
 		};
+		BE6D5FBB224A73C200DAAED0 /* Members */ = {
+			isa = PBXGroup;
+			children = (
+				BE6D5FBC224A73D200DAAED0 /* MembersViewController.swift */,
+			);
+			path = Members;
+			sourceTree = "<group>";
+		};
+		BE6D5FCF224B346400DAAED0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				BE6D5FD3224B42CE00DAAED0 /* UINavigationController+Rx.swift */,
+				BE6D5FD0224B347500DAAED0 /* UIBarButtonItem.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		BEC055F82248911F0000D67B /* Groups */ = {
 			isa = PBXGroup;
 			children = (
 				BEC055F92248913C0000D67B /* GroupsViewController.swift */,
 				BEC056072248BA7D0000D67B /* EditGroupViewController.swift */,
+				BE6D5FC5224A805100DAAED0 /* GroupDetailViewController.swift */,
 			);
 			path = Groups;
 			sourceTree = "<group>";
@@ -217,6 +259,8 @@
 			children = (
 				BEC055FD224893400000D67B /* GroupsViewModel.swift */,
 				BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */,
+				BE6D5FBF224A740900DAAED0 /* MembersViewModel.swift */,
+				BE6D5FC8224A838500DAAED0 /* GroupViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -384,15 +428,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SplitWise/Pods-SplitWise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
-				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
-				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
+				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
@@ -400,15 +443,14 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -473,22 +515,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6D5FD1224B347500DAAED0 /* UIBarButtonItem.swift in Sources */,
 				BE6B81A02247951E00FCA327 /* PersistenceService.swift in Sources */,
 				BEC056142248CB1F0000D67B /* Scene+ViewController.swift in Sources */,
 				BEC055FA2248913C0000D67B /* GroupsViewController.swift in Sources */,
+				BE6D5FC0224A740900DAAED0 /* MembersViewModel.swift in Sources */,
 				BEC055FE224893400000D67B /* GroupsViewModel.swift in Sources */,
 				BEC056022248A2240000D67B /* BindableType.swift in Sources */,
 				BEC0560B2248C2320000D67B /* EditGroupViewModel.swift in Sources */,
 				BEC056162248CCF90000D67B /* SceneCoordinator.swift in Sources */,
+				BE6D5FD4224B42CF00DAAED0 /* UINavigationController+Rx.swift in Sources */,
 				BEC056182248CF770000D67B /* AppManager.swift in Sources */,
 				BEC056082248BA7D0000D67B /* EditGroupViewController.swift in Sources */,
 				BE6B81A6224796B800FCA327 /* Person.swift in Sources */,
+				BE6D5FC2224A745E00DAAED0 /* MemberService.swift in Sources */,
+				BE6D5FC9224A838500DAAED0 /* GroupViewModel.swift in Sources */,
+				BE6D5FBD224A73D200DAAED0 /* MembersViewController.swift in Sources */,
 				BEC0560E2248CA0F0000D67B /* CoordinatorType.swift in Sources */,
 				BEC056122248CAA00000D67B /* SceneTransitionType.swift in Sources */,
+				BE6D5FC6224A805100DAAED0 /* GroupDetailViewController.swift in Sources */,
 				BEC056102248CA330000D67B /* Scene.swift in Sources */,
 				BEC055F622488D750000D67B /* Group.swift in Sources */,
 				BE6B817C22473DCD00FCA327 /* AppDelegate.swift in Sources */,
-				BEC056042248A4760000D67B /* GroupsService.swift in Sources */,
+				BEC056042248A4760000D67B /* GroupService.swift in Sources */,
 				BE6D5FB22249F6D500DAAED0 /* ViewController+Additions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -497,10 +546,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE6D5FBE224A73D500DAAED0 /* MembersViewController.swift in Sources */,
 				BEC056062248AEA50000D67B /* BindableType.swift in Sources */,
 				BE6B81A7224796B800FCA327 /* Person.swift in Sources */,
 				BE6B819122473DCE00FCA327 /* SplitWiseTests.swift in Sources */,
+				BE6D5FD2224B347500DAAED0 /* UIBarButtonItem.swift in Sources */,
+				BE6D5FCA224A838500DAAED0 /* GroupViewModel.swift in Sources */,
+				BE6D5FC4224A7D0500DAAED0 /* EditGroupViewController.swift in Sources */,
 				BEC055FF224893400000D67B /* GroupsViewModel.swift in Sources */,
+				BE6D5FC7224A805100DAAED0 /* GroupDetailViewController.swift in Sources */,
 				BE6D5FB5224A187100DAAED0 /* CoordinatorType.swift in Sources */,
 				BE6D5FB9224A187500DAAED0 /* SceneCoordinator.swift in Sources */,
 				BE6D5FB8224A187500DAAED0 /* Scene+ViewController.swift in Sources */,
@@ -508,7 +562,9 @@
 				BEC055F722488D750000D67B /* Group.swift in Sources */,
 				BE6D5FBA224A361300DAAED0 /* EditGroupViewModel.swift in Sources */,
 				BEC056192248CF770000D67B /* AppManager.swift in Sources */,
-				BEC056052248A7010000D67B /* GroupsService.swift in Sources */,
+				BEC056052248A7010000D67B /* GroupService.swift in Sources */,
+				BE6D5FD5224B42CF00DAAED0 /* UINavigationController+Rx.swift in Sources */,
+				BE6D5FC3224A7B6300DAAED0 /* MembersViewModel.swift in Sources */,
 				BEC055FB2248913C0000D67B /* GroupsViewController.swift in Sources */,
 				BE6D5FB6224A187500DAAED0 /* Scene.swift in Sources */,
 				BE6D5FB7224A187500DAAED0 /* SceneTransitionType.swift in Sources */,

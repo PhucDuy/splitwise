@@ -70,7 +70,7 @@ class PersistenceService: NSObject {
     }
     
     // MARK: - Private
-    fileprivate func withRealm<T>(_ operation: String, action: (Realm) throws -> T) -> T? {
+    func withRealm<T>(_ operation: String, action: (Realm) throws -> T) -> T? {
         do {
             let realm = try Realm()
             return try action(realm)

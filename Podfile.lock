@@ -2,7 +2,6 @@ PODS:
   - Action (3.11.0):
     - RxCocoa (~> 4.0)
     - RxSwift (~> 4.0)
-  - Differentiator (3.1.0)
   - Eureka (4.3.1)
   - "NSObject+Rx (4.4.1)":
     - RxSwift (~> 4.3)
@@ -17,12 +16,13 @@ PODS:
     - RxSwift (>= 4.4.2, ~> 4.4)
   - RxCocoa (4.4.2):
     - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxDataSources (3.1.0):
-    - Differentiator (~> 3.0)
-    - RxCocoa (~> 4.0)
-    - RxSwift (~> 4.0)
   - RxRealm (0.7.6):
     - RealmSwift (~> 3.0)
+    - RxSwift (~> 4.0)
+  - RxRealmDataSources (0.2.10):
+    - RealmSwift (~> 3.10)
+    - RxCocoa (~> 4.0)
+    - RxRealm (~> 0.7.6)
     - RxSwift (~> 4.0)
   - RxSwift (4.4.2):
     - RxAtomic (>= 4.4.2, ~> 4.4)
@@ -36,15 +36,13 @@ DEPENDENCIES:
   - "NSObject+Rx (~> 4.1)"
   - RxBlocking (~> 4.0)
   - RxCocoa (~> 4.0)
-  - RxDataSources (~> 3.0)
-  - RxRealm
+  - RxRealmDataSources
   - RxSwift (~> 4.0)
   - RxTest (~> 4.0)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - Action
-    - Differentiator
     - Eureka
     - "NSObject+Rx"
     - Realm
@@ -52,14 +50,13 @@ SPEC REPOS:
     - RxAtomic
     - RxBlocking
     - RxCocoa
-    - RxDataSources
     - RxRealm
+    - RxRealmDataSources
     - RxSwift
     - RxTest
 
 SPEC CHECKSUMS:
   Action: 689181e4c3f6566844178d8a7da6fef39a9597fc
-  Differentiator: be49ca3408f0ecfc761e4c7763d20c62be01b9ad
   Eureka: 28ea296f06710f6745266b71f17862048941a32d
   "NSObject+Rx": 9884a92f19b610795c431e10b4e601913b59c9e9
   Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
@@ -67,11 +64,11 @@ SPEC CHECKSUMS:
   RxAtomic: d00e97c10db88c6f08540e0bf2752fc5a2404167
   RxBlocking: e96fdda1473d81332a6ed2cface935dc2167a122
   RxCocoa: 477990dc3b4c3ff55fb0ac77e1cc06244e0aaec8
-  RxDataSources: a843bad90c29817f5923ec8163f4af2de084ceb3
   RxRealm: 5379eddd74f8d617ca7681d1f8d144af25b432b0
+  RxRealmDataSources: 89b61c0d3edf7769da2a6bf4dcf317bc713394db
   RxSwift: 74c29b693c8e42b0f64400e8b06564575742d649
   RxTest: 6433d5b6229f5de424fa534bc22b5e6c38b0b671
 
-PODFILE CHECKSUM: e4e0dd5ed95c284f4a98ba17970ef1a48d226d07
+PODFILE CHECKSUM: 14ec580da99780ba35da214a91c1b9cfdf6ea610
 
 COCOAPODS: 1.6.1

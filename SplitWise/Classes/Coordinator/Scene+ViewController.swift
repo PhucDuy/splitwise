@@ -19,9 +19,17 @@ extension Scene {
             return nav
         case .editGroup(let viewModel):
             let nav = storyboard.instantiateViewController(withIdentifier: "EditGroup") as! UINavigationController
-            let vc = nav.viewControllers.first as! EditGroupViewController
+            let vc = nav.children.first as! EditGroupViewController
             vc.bindViewModel(to: viewModel)
             return nav
+        case .members(let viewModel):
+            let vc = storyboard.instantiateViewController(withIdentifier: "MembersViewController") as! MembersViewController
+            vc.bindViewModel(to: viewModel)
+            return vc
+        case .group(let viewModel):
+            let vc = storyboard.instantiateViewController(withIdentifier: "GroupDetailViewController") as! GroupDetailViewController
+            vc.bindViewModel(to: viewModel)
+            return vc
         }
     }
 }
