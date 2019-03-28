@@ -50,6 +50,9 @@
 		BE6D5FE7224C9A8600DAAED0 /* EditExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FE6224C9A8600DAAED0 /* EditExpenseViewModel.swift */; };
 		BE6D5FE8224C9D0000DAAED0 /* EditExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FE6224C9A8600DAAED0 /* EditExpenseViewModel.swift */; };
 		BE6D5FEB224CBDC800DAAED0 /* Eureka+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FEA224CBDC800DAAED0 /* Eureka+Rx.swift */; };
+		BE6D5FEE224D135200DAAED0 /* ExpenseDiaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FED224D135200DAAED0 /* ExpenseDiaryViewController.swift */; };
+		BE6D5FF0224D14E100DAAED0 /* ExpenseDairyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FEF224D14E000DAAED0 /* ExpenseDairyViewModel.swift */; };
+		BE6D5FF1224D1ABC00DAAED0 /* ExpenseDairyViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FEF224D14E000DAAED0 /* ExpenseDairyViewModel.swift */; };
 		BEC055F622488D750000D67B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F522488D750000D67B /* Group.swift */; };
 		BEC055F722488D750000D67B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F522488D750000D67B /* Group.swift */; };
 		BEC055FA2248913C0000D67B /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F92248913C0000D67B /* GroupsViewController.swift */; };
@@ -116,6 +119,8 @@
 		BE6D5FE4224C9A3200DAAED0 /* EditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseViewController.swift; sourceTree = "<group>"; };
 		BE6D5FE6224C9A8600DAAED0 /* EditExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseViewModel.swift; sourceTree = "<group>"; };
 		BE6D5FEA224CBDC800DAAED0 /* Eureka+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eureka+Rx.swift"; sourceTree = "<group>"; };
+		BE6D5FED224D135200DAAED0 /* ExpenseDiaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDiaryViewController.swift; sourceTree = "<group>"; };
+		BE6D5FEF224D14E000DAAED0 /* ExpenseDairyViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseDairyViewModel.swift; sourceTree = "<group>"; };
 		BEC055F522488D750000D67B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		BEC055F92248913C0000D67B /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		BEC055FD224893400000D67B /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
@@ -273,6 +278,7 @@
 			children = (
 				BE6D5FDB224C806900DAAED0 /* ExpensesViewController.swift */,
 				BE6D5FE4224C9A3200DAAED0 /* EditExpenseViewController.swift */,
+				BE6D5FED224D135200DAAED0 /* ExpenseDiaryViewController.swift */,
 			);
 			path = Expenses;
 			sourceTree = "<group>";
@@ -296,6 +302,7 @@
 				BE6D5FC8224A838500DAAED0 /* GroupViewModel.swift */,
 				BE6D5FDF224C94C600DAAED0 /* ExpensesViewModel.swift */,
 				BE6D5FE6224C9A8600DAAED0 /* EditExpenseViewModel.swift */,
+				BE6D5FEF224D14E000DAAED0 /* ExpenseDairyViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -464,12 +471,14 @@
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-SplitWise/Pods-SplitWise-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Action/Action.framework",
+				"${BUILT_PRODUCTS_DIR}/Differentiator/Differentiator.framework",
 				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/NSObject+Rx/NSObject_Rx.framework",
 				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
 				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/RxAtomic/RxAtomic.framework",
 				"${BUILT_PRODUCTS_DIR}/RxCocoa/RxCocoa.framework",
+				"${BUILT_PRODUCTS_DIR}/RxDataSources/RxDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealm/RxRealm.framework",
 				"${BUILT_PRODUCTS_DIR}/RxRealmDataSources/RxRealmDataSources.framework",
 				"${BUILT_PRODUCTS_DIR}/RxSwift/RxSwift.framework",
@@ -479,12 +488,14 @@
 			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Action.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Differentiator.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/NSObject_Rx.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxAtomic.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxCocoa.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealm.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxRealmDataSources.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxSwift.framework",
@@ -568,7 +579,9 @@
 				BE6D5FE0224C94C600DAAED0 /* ExpensesViewModel.swift in Sources */,
 				BEC056082248BA7D0000D67B /* EditGroupViewController.swift in Sources */,
 				BE6D5FE5224C9A3200DAAED0 /* EditExpenseViewController.swift in Sources */,
+				BE6D5FF0224D14E100DAAED0 /* ExpenseDairyViewModel.swift in Sources */,
 				BE6B81A6224796B800FCA327 /* Person.swift in Sources */,
+				BE6D5FEE224D135200DAAED0 /* ExpenseDiaryViewController.swift in Sources */,
 				BE6D5FC2224A745E00DAAED0 /* MemberService.swift in Sources */,
 				BE6D5FC9224A838500DAAED0 /* GroupViewModel.swift in Sources */,
 				BE6D5FBD224A73D200DAAED0 /* MembersViewController.swift in Sources */,
@@ -615,6 +628,7 @@
 				BE6D5FE1224C974D00DAAED0 /* Expense.swift in Sources */,
 				BEC055FB2248913C0000D67B /* GroupsViewController.swift in Sources */,
 				BE6D5FB6224A187500DAAED0 /* Scene.swift in Sources */,
+				BE6D5FF1224D1ABC00DAAED0 /* ExpenseDairyViewModel.swift in Sources */,
 				BE6D5FB7224A187500DAAED0 /* SceneTransitionType.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

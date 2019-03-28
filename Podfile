@@ -14,6 +14,7 @@ target 'SplitWise' do
     pod 'Action', '~> 3.4'
     pod 'NSObject+Rx', '~> 4.1'
     pod 'Eureka'
+    pod 'RxDataSources', '~> 3.0'
 
 
   target 'SplitWiseTests' do

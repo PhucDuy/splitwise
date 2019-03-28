@@ -25,6 +25,7 @@ protocol ExpenseServiceType {
         group: Group) -> Observable<Expense>
     func deleteExpense(expense: Expense) -> Observable<Expense>
 
+
 }
 enum ExpenseServiceError: Error {
     case failedToValidate(message: String)

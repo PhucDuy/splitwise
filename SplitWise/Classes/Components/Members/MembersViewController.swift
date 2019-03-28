@@ -49,6 +49,7 @@ class MembersViewController: UIViewController, BindableType {
             .disposed(by: self.rx.disposeBag)
         tableView.rx.realmModelSelected(Person.self)
             .subscribe(onNext: { [unowned self] (person) in
+                self.viewModel.input.memberWasSelected.onNext(person)
                 if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
                     self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
                 }

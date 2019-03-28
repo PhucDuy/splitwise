@@ -23,6 +23,7 @@ class MembersViewModel: ViewModelType {
     struct Input {
         let addMemberButtonWasClicked: AnyObserver<Void>
         let createMember: AnyObserver<String>
+        let memberWasSelected: AnyObserver<Person>
     }
 
     struct Output {
@@ -30,9 +31,10 @@ class MembersViewModel: ViewModelType {
         let showCreateMemberPopUpObservable: Observable<Void>
     }
 
-    private let addMemberButtonWasClickedSubject = PublishSubject<Void>()
+    private let addMemberButtonWasClickedObserver = PublishSubject<Void>()
     private let showCreateMemberPopUpObservable = PublishSubject<Void>()
-    private let createMemberSubject = PublishSubject<String>()
+    private let createMemberObserver = PublishSubject<String>()
+    private let memberWasSelectedObserver = PublishSubject<Person>()
     private let errorsObservable = PublishSubject<Error>()
     private let disposeBag = DisposeBag()
 
@@ -41,19 +43,26 @@ class MembersViewModel: ViewModelType {
         self.service = service
         self.sceneCoordinator = coordinator
         self.group = group
-        self.input = Input(addMemberButtonWasClicked: self.addMemberButtonWasClickedSubject.asObserver(),
-                           createMember: self.createMemberSubject.asObserver())
+        self.input = Input(addMemberButtonWasClicked: self.addMemberButtonWasClickedObserver.asObserver(),
+            createMember: self.createMemberObserver.asObserver(),
+            memberWasSelected: memberWasSelectedObserver.asObserver())
         self.output = Output(errorsObservable: self.errorsObservable.asObservable(),
-                             showCreateMemberPopUpObservable: self.showCreateMemberPopUpObservable.asObservable())
-        self.addMemberButtonWasClickedSubject.subscribe({
+            showCreateMemberPopUpObservable: self.showCreateMemberPopUpObservable.asObservable())
+        self.addMemberButtonWasClickedObserver.subscribe({
             [weak self] event in
             guard let strongSelf = self else { return }
             strongSelf.showCreateMemberPopUpObservable.onNext(())
         }).disposed(by: self.disposeBag)
-        self.createMemberSubject.subscribe(onNext: { [weak self] (name) in
+        self.createMemberObserver.subscribe(onNext: { [weak self] (name) in
             guard let strongSelf = self else { return }
             strongSelf.createMember(name: name, group: strongSelf.group)
-            
+
+        }).disposed(by: self.disposeBag)
+        self.memberWasSelectedObserver.subscribe(onNext: { [weak self] (person) in
+            guard let strongSelf = self else { return }
+            let viewModel = ExpenseDairyViewModel(coordinator: strongSelf.sceneCoordinator
+                , group: strongSelf.group, person: person)
+            strongSelf.sceneCoordinator.transition(to: .expenseDairy(viewModel), type: .push)
         }).disposed(by: self.disposeBag)
     }
     func members() -> List<Person> {

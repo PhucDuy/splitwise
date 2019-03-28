@@ -39,7 +39,10 @@ extension Scene {
             let vc = nav.children.first as! EditExpenseViewController
             vc.bindViewModel(to: viewModel)
             return nav
-
+        case .expenseDairy(let viewModel):
+            let vc = storyboard.instantiateViewController(withIdentifier: "ExpenseDiaryViewController") as! ExpenseDiaryViewController
+            vc.bindViewModel(to: viewModel)
+            return vc
         }
     }
 }
