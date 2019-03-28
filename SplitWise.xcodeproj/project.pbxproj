@@ -38,6 +38,18 @@
 		BE6D5FD2224B347500DAAED0 /* UIBarButtonItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD0224B347500DAAED0 /* UIBarButtonItem.swift */; };
 		BE6D5FD4224B42CF00DAAED0 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD3224B42CE00DAAED0 /* UINavigationController+Rx.swift */; };
 		BE6D5FD5224B42CF00DAAED0 /* UINavigationController+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD3224B42CE00DAAED0 /* UINavigationController+Rx.swift */; };
+		BE6D5FD7224C72D800DAAED0 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD6224C72D800DAAED0 /* Expense.swift */; };
+		BE6D5FD9224C74A100DAAED0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD8224C74A100DAAED0 /* Transaction.swift */; };
+		BE6D5FDC224C806900DAAED0 /* ExpensesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FDB224C806900DAAED0 /* ExpensesViewController.swift */; };
+		BE6D5FDE224C80DA00DAAED0 /* ExpenseService.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FDD224C80DA00DAAED0 /* ExpenseService.swift */; };
+		BE6D5FE0224C94C600DAAED0 /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FDF224C94C600DAAED0 /* ExpensesViewModel.swift */; };
+		BE6D5FE1224C974D00DAAED0 /* Expense.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD6224C72D800DAAED0 /* Expense.swift */; };
+		BE6D5FE2224C974F00DAAED0 /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FD8224C74A100DAAED0 /* Transaction.swift */; };
+		BE6D5FE3224C99EF00DAAED0 /* ExpensesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FDF224C94C600DAAED0 /* ExpensesViewModel.swift */; };
+		BE6D5FE5224C9A3200DAAED0 /* EditExpenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FE4224C9A3200DAAED0 /* EditExpenseViewController.swift */; };
+		BE6D5FE7224C9A8600DAAED0 /* EditExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FE6224C9A8600DAAED0 /* EditExpenseViewModel.swift */; };
+		BE6D5FE8224C9D0000DAAED0 /* EditExpenseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FE6224C9A8600DAAED0 /* EditExpenseViewModel.swift */; };
+		BE6D5FEB224CBDC800DAAED0 /* Eureka+Rx.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE6D5FEA224CBDC800DAAED0 /* Eureka+Rx.swift */; };
 		BEC055F622488D750000D67B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F522488D750000D67B /* Group.swift */; };
 		BEC055F722488D750000D67B /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F522488D750000D67B /* Group.swift */; };
 		BEC055FA2248913C0000D67B /* GroupsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC055F92248913C0000D67B /* GroupsViewController.swift */; };
@@ -96,6 +108,14 @@
 		BE6D5FC8224A838500DAAED0 /* GroupViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupViewModel.swift; sourceTree = "<group>"; };
 		BE6D5FD0224B347500DAAED0 /* UIBarButtonItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIBarButtonItem.swift; sourceTree = "<group>"; };
 		BE6D5FD3224B42CE00DAAED0 /* UINavigationController+Rx.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Rx.swift"; sourceTree = "<group>"; };
+		BE6D5FD6224C72D800DAAED0 /* Expense.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Expense.swift; sourceTree = "<group>"; };
+		BE6D5FD8224C74A100DAAED0 /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		BE6D5FDB224C806900DAAED0 /* ExpensesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewController.swift; sourceTree = "<group>"; };
+		BE6D5FDD224C80DA00DAAED0 /* ExpenseService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpenseService.swift; sourceTree = "<group>"; };
+		BE6D5FDF224C94C600DAAED0 /* ExpensesViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExpensesViewModel.swift; sourceTree = "<group>"; };
+		BE6D5FE4224C9A3200DAAED0 /* EditExpenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseViewController.swift; sourceTree = "<group>"; };
+		BE6D5FE6224C9A8600DAAED0 /* EditExpenseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditExpenseViewModel.swift; sourceTree = "<group>"; };
+		BE6D5FEA224CBDC800DAAED0 /* Eureka+Rx.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Eureka+Rx.swift"; sourceTree = "<group>"; };
 		BEC055F522488D750000D67B /* Group.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Group.swift; sourceTree = "<group>"; };
 		BEC055F92248913C0000D67B /* GroupsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewController.swift; sourceTree = "<group>"; };
 		BEC055FD224893400000D67B /* GroupsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupsViewModel.swift; sourceTree = "<group>"; };
@@ -201,6 +221,7 @@
 		BE6B819C224794B200FCA327 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BE6D5FDA224C805400DAAED0 /* Expenses */,
 				BE6D5FBB224A73C200DAAED0 /* Members */,
 				BEC055F82248911F0000D67B /* Groups */,
 			);
@@ -213,6 +234,7 @@
 				BE6B819F2247951E00FCA327 /* PersistenceService.swift */,
 				BEC056032248A4760000D67B /* GroupService.swift */,
 				BE6D5FC1224A745E00DAAED0 /* MemberService.swift */,
+				BE6D5FDD224C80DA00DAAED0 /* ExpenseService.swift */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -223,6 +245,8 @@
 				BE6B81A5224796B800FCA327 /* Person.swift */,
 				BEC055F522488D750000D67B /* Group.swift */,
 				BEC056012248A2240000D67B /* BindableType.swift */,
+				BE6D5FD6224C72D800DAAED0 /* Expense.swift */,
+				BE6D5FD8224C74A100DAAED0 /* Transaction.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -244,6 +268,15 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		BE6D5FDA224C805400DAAED0 /* Expenses */ = {
+			isa = PBXGroup;
+			children = (
+				BE6D5FDB224C806900DAAED0 /* ExpensesViewController.swift */,
+				BE6D5FE4224C9A3200DAAED0 /* EditExpenseViewController.swift */,
+			);
+			path = Expenses;
+			sourceTree = "<group>";
+		};
 		BEC055F82248911F0000D67B /* Groups */ = {
 			isa = PBXGroup;
 			children = (
@@ -261,6 +294,8 @@
 				BEC0560A2248C2320000D67B /* EditGroupViewModel.swift */,
 				BE6D5FBF224A740900DAAED0 /* MembersViewModel.swift */,
 				BE6D5FC8224A838500DAAED0 /* GroupViewModel.swift */,
+				BE6D5FDF224C94C600DAAED0 /* ExpensesViewModel.swift */,
+				BE6D5FE6224C9A8600DAAED0 /* EditExpenseViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -270,6 +305,7 @@
 			children = (
 				BEC056172248CF770000D67B /* AppManager.swift */,
 				BE6D5FB12249F6D500DAAED0 /* ViewController+Additions.swift */,
+				BE6D5FEA224CBDC800DAAED0 /* Eureka+Rx.swift */,
 			);
 			path = Helper;
 			sourceTree = "<group>";
@@ -519,26 +555,34 @@
 				BE6B81A02247951E00FCA327 /* PersistenceService.swift in Sources */,
 				BEC056142248CB1F0000D67B /* Scene+ViewController.swift in Sources */,
 				BEC055FA2248913C0000D67B /* GroupsViewController.swift in Sources */,
+				BE6D5FDE224C80DA00DAAED0 /* ExpenseService.swift in Sources */,
 				BE6D5FC0224A740900DAAED0 /* MembersViewModel.swift in Sources */,
 				BEC055FE224893400000D67B /* GroupsViewModel.swift in Sources */,
 				BEC056022248A2240000D67B /* BindableType.swift in Sources */,
+				BE6D5FE7224C9A8600DAAED0 /* EditExpenseViewModel.swift in Sources */,
 				BEC0560B2248C2320000D67B /* EditGroupViewModel.swift in Sources */,
+				BE6D5FDC224C806900DAAED0 /* ExpensesViewController.swift in Sources */,
 				BEC056162248CCF90000D67B /* SceneCoordinator.swift in Sources */,
 				BE6D5FD4224B42CF00DAAED0 /* UINavigationController+Rx.swift in Sources */,
 				BEC056182248CF770000D67B /* AppManager.swift in Sources */,
+				BE6D5FE0224C94C600DAAED0 /* ExpensesViewModel.swift in Sources */,
 				BEC056082248BA7D0000D67B /* EditGroupViewController.swift in Sources */,
+				BE6D5FE5224C9A3200DAAED0 /* EditExpenseViewController.swift in Sources */,
 				BE6B81A6224796B800FCA327 /* Person.swift in Sources */,
 				BE6D5FC2224A745E00DAAED0 /* MemberService.swift in Sources */,
 				BE6D5FC9224A838500DAAED0 /* GroupViewModel.swift in Sources */,
 				BE6D5FBD224A73D200DAAED0 /* MembersViewController.swift in Sources */,
 				BEC0560E2248CA0F0000D67B /* CoordinatorType.swift in Sources */,
 				BEC056122248CAA00000D67B /* SceneTransitionType.swift in Sources */,
+				BE6D5FD9224C74A100DAAED0 /* Transaction.swift in Sources */,
 				BE6D5FC6224A805100DAAED0 /* GroupDetailViewController.swift in Sources */,
 				BEC056102248CA330000D67B /* Scene.swift in Sources */,
 				BEC055F622488D750000D67B /* Group.swift in Sources */,
 				BE6B817C22473DCD00FCA327 /* AppDelegate.swift in Sources */,
+				BE6D5FEB224CBDC800DAAED0 /* Eureka+Rx.swift in Sources */,
 				BEC056042248A4760000D67B /* GroupService.swift in Sources */,
 				BE6D5FB22249F6D500DAAED0 /* ViewController+Additions.swift in Sources */,
+				BE6D5FD7224C72D800DAAED0 /* Expense.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -548,10 +592,12 @@
 			files = (
 				BE6D5FBE224A73D500DAAED0 /* MembersViewController.swift in Sources */,
 				BEC056062248AEA50000D67B /* BindableType.swift in Sources */,
+				BE6D5FE2224C974F00DAAED0 /* Transaction.swift in Sources */,
 				BE6B81A7224796B800FCA327 /* Person.swift in Sources */,
 				BE6B819122473DCE00FCA327 /* SplitWiseTests.swift in Sources */,
 				BE6D5FD2224B347500DAAED0 /* UIBarButtonItem.swift in Sources */,
 				BE6D5FCA224A838500DAAED0 /* GroupViewModel.swift in Sources */,
+				BE6D5FE8224C9D0000DAAED0 /* EditExpenseViewModel.swift in Sources */,
 				BE6D5FC4224A7D0500DAAED0 /* EditGroupViewController.swift in Sources */,
 				BEC055FF224893400000D67B /* GroupsViewModel.swift in Sources */,
 				BE6D5FC7224A805100DAAED0 /* GroupDetailViewController.swift in Sources */,
@@ -565,6 +611,8 @@
 				BEC056052248A7010000D67B /* GroupService.swift in Sources */,
 				BE6D5FD5224B42CF00DAAED0 /* UINavigationController+Rx.swift in Sources */,
 				BE6D5FC3224A7B6300DAAED0 /* MembersViewModel.swift in Sources */,
+				BE6D5FE3224C99EF00DAAED0 /* ExpensesViewModel.swift in Sources */,
+				BE6D5FE1224C974D00DAAED0 /* Expense.swift in Sources */,
 				BEC055FB2248913C0000D67B /* GroupsViewController.swift in Sources */,
 				BE6D5FB6224A187500DAAED0 /* Scene.swift in Sources */,
 				BE6D5FB7224A187500DAAED0 /* SceneTransitionType.swift in Sources */,

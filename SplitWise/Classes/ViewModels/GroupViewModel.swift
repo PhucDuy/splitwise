@@ -20,13 +20,16 @@ class GroupViewModel: ViewModelType {
     }
 
     struct Output {
+        let enableExpensesButton: Observable<Bool>
+        let enableBalancesButton: Observable<Bool>
     }
     let input: Input
     let output: Output
     private let membersButtonWasClickedSubject = PublishSubject<Void>()
     private let balanceButtonWasClickedSubject = PublishSubject<Void>()
     private let expensesButtonWasClickedSubject = PublishSubject<Void>()
-
+    private let enableExpensesButtonSubject = PublishSubject<Bool>()
+    private let enableBalancesButtonSubject = PublishSubject<Bool>()
     private let disposeBag = DisposeBag()
     init(group: Group, coordinator: SceneCoordinatorType) {
         self.group = group
@@ -34,7 +37,8 @@ class GroupViewModel: ViewModelType {
         self.input = Input(membersButtonWasClicked: self.membersButtonWasClickedSubject.asObserver()
             , balanceButtonWasClicked: self.balanceButtonWasClickedSubject.asObserver()
             , expensesButtonWasClicked: self.expensesButtonWasClickedSubject.asObserver())
-        self.output = Output()
+        self.output = Output(enableExpensesButton: enableExpensesButtonSubject.asObservable(),
+                             enableBalancesButton: enableBalancesButtonSubject.asObservable())
 
         membersButtonWasClickedSubject
             .subscribe(onNext: { [weak self](observer) in
@@ -44,14 +48,16 @@ class GroupViewModel: ViewModelType {
             }).disposed(by: disposeBag)
         balanceButtonWasClickedSubject
             .subscribe(onNext: { [weak self](observer) in
-
-
+            
             }).disposed(by: disposeBag)
+        
         expensesButtonWasClickedSubject
             .subscribe(onNext: { [weak self](observer) in
-
-
+                guard let strongSelf = self else { return }
+                let viewModel = ExpensesViewModel(service: ExpenseService(), coordinator: strongSelf.sceneCoordinator, group: strongSelf.group)
+                strongSelf.sceneCoordinator.transition(to: .expenses(viewModel), type: .push)
             }).disposed(by: disposeBag)
+        
     }
 
 }

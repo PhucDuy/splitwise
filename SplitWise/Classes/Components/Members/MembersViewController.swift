@@ -47,6 +47,13 @@ class MembersViewController: UIViewController, BindableType {
                 strongSelf.showCreateMemberPopUp()
             })
             .disposed(by: self.rx.disposeBag)
+        tableView.rx.realmModelSelected(Person.self)
+            .subscribe(onNext: { [unowned self] (person) in
+                if let selectedRowIndexPath = self.tableView.indexPathForSelectedRow {
+                    self.tableView.deselectRow(at: selectedRowIndexPath, animated: true)
+                }
+            }).disposed(by: self.rx.disposeBag)
+
     }
     func showCreateMemberPopUp() {
         let alert = UIAlertController(title: "Create Member", message: "Please fill member's name", preferredStyle: .alert)

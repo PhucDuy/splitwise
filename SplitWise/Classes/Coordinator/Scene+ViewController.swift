@@ -30,6 +30,16 @@ extension Scene {
             let vc = storyboard.instantiateViewController(withIdentifier: "GroupDetailViewController") as! GroupDetailViewController
             vc.bindViewModel(to: viewModel)
             return vc
+        case .expenses(let viewModel):
+            let vc = storyboard.instantiateViewController(withIdentifier: "ExpensesViewController") as! ExpensesViewController
+            vc.bindViewModel(to: viewModel)
+            return vc
+        case .editExpenses(let viewModel):
+            let nav = storyboard.instantiateViewController(withIdentifier: "EditExpense") as! UINavigationController
+            let vc = nav.children.first as! EditExpenseViewController
+            vc.bindViewModel(to: viewModel)
+            return nav
+
         }
     }
 }

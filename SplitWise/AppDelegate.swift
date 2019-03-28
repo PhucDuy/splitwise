@@ -18,7 +18,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         if let window = window {
             let sceneCoordinator = SceneCoordinator(window: window)
+            AppManager.shared.migrationDatabase()
             AppManager.shared.startFromGroupsScene(sceneCoordinator: sceneCoordinator)
+            window.makeKeyAndVisible()
         }
         return true
     }

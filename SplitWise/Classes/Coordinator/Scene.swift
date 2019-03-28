@@ -12,5 +12,7 @@ enum Scene {
     case editGroup(EditGroupViewModel)
     case members(MembersViewModel)
     case group(GroupViewModel)
+    case expenses(ExpensesViewModel)
+    case editExpenses(EditExpenseViewModel)
 }
 

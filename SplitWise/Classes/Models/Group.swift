@@ -16,6 +16,7 @@ class Group: Object {
     @objc dynamic var info: String?
     @objc dynamic var createdDate: Date = Date()
     let members = List<Person>()
+    let expenses = List<Expense>()
     override static func primaryKey() -> String? {
         return "uid"
     }
