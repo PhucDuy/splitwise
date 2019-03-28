@@ -19,8 +19,8 @@ class Expense: Object {
     let group = LinkingObjects(fromType: Group.self, property: "expenses")
     let transactions = List<Transaction>()
     static func create(realm: Realm,
-                       title: String,amount: Double,
-        lender: Person,createdAt: Date,
+        title: String, amount: Double,
+        lender: Person, createdAt: Date,
         transactions: [TransactionData]) -> Expense {
         let expense = Expense()
         expense.uid = (realm.objects(Expense.self).max(ofProperty: "uid") ?? 0) + 1
@@ -30,9 +30,7 @@ class Expense: Object {
         expense.lender = lender
         transactions.forEach { (data) in
             try? realm.write {
-                if data.lendee.uid != lender.uid {
-                    expense.transactions.append(Transaction.create(realm: realm, data: data, lender: lender))
-                }
+                expense.transactions.append(Transaction.create(realm: realm, data: data, lender: lender))
             }
         }
         return expense

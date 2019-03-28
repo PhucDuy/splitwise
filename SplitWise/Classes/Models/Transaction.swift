@@ -10,7 +10,7 @@ import Foundation
 import RealmSwift
 
 struct TransactionData {
-    var lendee: Person
+    var lendee: Person?
     var amount: Double
 }
 
@@ -27,5 +27,8 @@ class Transaction: Object {
         transaction.lendee = data.lendee
         transaction.amount = data.amount
         return transaction
+    }
+    func toData() -> TransactionData {
+        return TransactionData(lendee: self.lendee, amount: self.amount)
     }
 }

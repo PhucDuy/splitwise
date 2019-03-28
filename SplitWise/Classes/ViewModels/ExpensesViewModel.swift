@@ -55,11 +55,13 @@ class ExpensesViewModel: ViewModelType {
                                                      group: strongSelf.group)
             strongSelf.sceneCoordinator.transition(to: .editExpenses(editViewModel), type: .modal)
         }).disposed(by: self.disposeBag)
-        self.expenseWasSelectedSubject.subscribe(onNext: { [weak self] (group) in
+        self.expenseWasSelectedSubject.subscribe(onNext: { [weak self] (expense) in
             guard let strongSelf = self else { return }
-//            let viewModel = GroupViewModel(group: group,
-//                                           coordinator: strongSelf.sceneCoordinator)
-//            strongSelf.sceneCoordinator.transition(to: .group(viewModel), type: .push)
+            let editViewModel = EditExpenseViewModel(service: strongSelf.service,
+                                                     coordinator: strongSelf.sceneCoordinator,
+                                                     group: strongSelf.group, expense: expense)
+            strongSelf.sceneCoordinator.transition(to: .editExpenses(editViewModel), type: .modal)
+
         }).disposed(by: self.disposeBag)
     }
     func expenses() -> List<Expense> {

@@ -67,8 +67,6 @@ class EditExpenseViewModel: ViewModelType {
         }
     }
 
-
-
     init(service: ExpenseServiceType, coordinator: SceneCoordinatorType, group: Group, expense: Expense? = nil) {
         self.expense = expense
         self.form = Form()
@@ -102,16 +100,28 @@ class EditExpenseViewModel: ViewModelType {
                 })
             }
         }).disposed(by: self.disposeBag)
-        makeTransactionDefaultData()
+        makeDefaultData()
     }
-    private func makeTransactionDefaultData() {
+
+    private func makeDefaultData() {
         self.transactions.removeAll()
-        if self.expense == nil {
+        if let expense = self.expense {
+            self.amountVariable.accept(expense.amount)
+            self.titleVariable.accept(expense.title)
+            self.createdAtVariable.accept(expense.createdDate)
+            if let lender = expense.lender {
+                self.whoPayChangedObserver.onNext(lender)
+            }
+            self.transactions = expense.transactions.map { (transation) -> TransactionData in
+                return transation.toData()
+            }
+        } else {
             self.transactions = self.group.members.map { (person) -> TransactionData in
                 return TransactionData(lendee: person, amount: 0)
             }
         }
     }
+    // MARK: - Validation
     func validate(data: ExpenseData) -> Observable<ExpenseData> {
         return Observable<ExpenseData>.create({ (observer) -> Disposable in
             if self.form.validate().count == 0 {
@@ -124,6 +134,7 @@ class EditExpenseViewModel: ViewModelType {
             return Disposables.create()
         })
     }
+
     func validate(transactions: [TransactionData]) -> Observable<[TransactionData]> {
         return Observable<[TransactionData]>.create({ [weak self] (observer) -> Disposable in
             if let strongSelf = self {
@@ -134,7 +145,12 @@ class EditExpenseViewModel: ViewModelType {
                     if amount == totalTransactionAmount {
                         observer.onNext(transactions)
                     } else {
-                        observer.onError(ExpenseServiceError.failedToValidate(message: "Please fill all information before save."))
+                        let remainder = totalTransactionAmount - amount
+                        if remainder > 0 {
+                            observer.onError(ExpenseServiceError.failedToValidate(message: "Total amount is more by \(remainder)."))
+                        } else {
+                            observer.onError(ExpenseServiceError.failedToValidate(message: "Total amount is less by \(abs(remainder))."))
+                        }
                     }
                 }
             }
@@ -143,29 +159,32 @@ class EditExpenseViewModel: ViewModelType {
             return Disposables.create()
         })
     }
+    // MARK: - Create Expense
     func createExpense(data: ExpenseData) {
         self.validate(data: data).flatMap { (data) in
             self.validate(transactions: self.transactions)
-        }.flatMapLatest { (transactions) in
-            self.service.createExpense(title: data.title,
-                                       amount: data.amount,
-                lender: data.payPerson,
-                createdAt: data.createdDate,
-                transactions: transactions,
-                group: self.group)
+        }.flatMapLatest { (transactions) -> Observable<Expense> in
+            if let expense = self.expense {
+                return self.service.updateExpense(expense: expense,
+                    title: data.title,
+                    amount: data.amount,
+                    lender: data.payPerson,
+                    createdAt: data.createdDate,
+                    transactions: transactions,
+                    group: self.group)
+            } else {
+                return self.service.createExpense(title: data.title,
+                    amount: data.amount,
+                    lender: data.payPerson,
+                    createdAt: data.createdDate,
+                    transactions: transactions,
+                    group: self.group)
+            }
         }.subscribe(onNext: { (expense) in
             self.sceneCoordinator.pop()
         }, onError: { (error) in
                 self.errorsSubject.onNext(error)
             }).disposed(by: self.disposeBag)
-
-
-//        self.validate(data: data).flatMap {
-//            (data) in
-//            self.validate(transactions: self.transactions)
-//            }.flatMap { (transactions) in
-//
-//        }
     }
 
     // MARK: - Form
@@ -178,7 +197,12 @@ class EditExpenseViewModel: ViewModelType {
             $0.add(rule: RuleRequired())
             $0.placeholder = "Enter title here"
             $0.validationOptions = .validatesOnChange
+            if let expense = self.expense {
+                $0.value = expense.title
+            }
+
             $0.rx.value.bind(to: titleVariable).disposed(by: self.disposeBag)
+            
         }.cellUpdate { cell, row in
             if !row.isValid {
                 cell.titleLabel?.textColor = .red
@@ -213,6 +237,9 @@ class EditExpenseViewModel: ViewModelType {
             $0.displayValueFor = { (rowValue: Person?) in
                 return rowValue?.name
             }
+            if let expense = self.expense {
+                $0.value = expense.lender
+            }
         }.onPresent { from, to in
             to.popoverPresentationController?.permittedArrowDirections = .up
         }.onChange { (row) in
@@ -231,13 +258,12 @@ class EditExpenseViewModel: ViewModelType {
 
         let rows = self.transactions.enumerated().map { (index, transaction) -> DecimalRow in
             return DecimalRow() {
-                $0.title = transaction.lendee.name
+                $0.title = transaction.lendee?.name
                 $0.add(rule: RuleRequired())
                 $0.validationOptions = .validatesOnChange
                 $0.value = transaction.amount
                 $0.formatter = DecimalFormatter()
                 $0.useFormatterDuringInput = true
-                $0.tag = "transaction_\(transaction.lendee.name)"
             }.onChange({ (row) in
                 if let value = row.value {
                     self.transactions[self.transactions.index(self.transactions.startIndex, offsetBy: index)].amount = value
