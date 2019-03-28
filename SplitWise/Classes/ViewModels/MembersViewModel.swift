@@ -10,6 +10,7 @@ import Foundation
 import RxSwift
 import RxRealm
 import NSObject_Rx
+import RealmSwift
 import RxRealmDataSources
 
 
@@ -55,15 +56,9 @@ class MembersViewModel: ViewModelType {
             
         }).disposed(by: self.disposeBag)
     }
-//    var sectionsedItems: Observable<[MemberSection]> {
-//        return Observable<[MemberSection]>.create { (observer) -> Disposable in
-//            let members = self.group.persons
-//            observer.onNext([MemberSection(model: "Group", items: members.toArray())])
-//            observer.onCompleted()
-//            return Disposables.create()
-//        }
-//    }
-
+    func members() -> List<Person> {
+        return self.group.members
+    }
     func createMember(name: String, group: Group) {
         self.service.createPerson(name: name, group: group).subscribe().disposed(by: disposeBag)
     }

@@ -37,6 +37,13 @@ class GroupDetailViewController: UIViewController, BindableType {
         balanceButton.rx.tap.asObservable()
             .subscribe(viewModel.input.balanceButtonWasClicked)
             .disposed(by: self.rx.disposeBag)
-
+        Observable.collection(from: viewModel.group.members).subscribe(onNext: { (values) in
+            self.expensesButton.isEnabled = values.count > 0
+            self.expensesButton.isHidden = !(values.count > 0)
+        }).disposed(by: self.rx.disposeBag)
+        Observable.collection(from: viewModel.group.expenses).subscribe(onNext: { (values) in
+            self.balanceButton.isEnabled = values.count > 0
+            self.balanceButton.isHidden = !(values.count > 0)
+        }).disposed(by: self.rx.disposeBag)
     }
 }

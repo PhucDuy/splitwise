@@ -28,14 +28,15 @@ class GroupsViewModel: ViewModelType {
         let errorsObservable: Observable<Error>
         let createGroupObservable: Observable<Void>
     }
-
+    
     private let addGroupButtonWasClickedSubject = PublishSubject<Void>()
     private let createGroupObservableSubject = PublishSubject<Void>()
     private let errorsObservableSubject = PublishSubject<Error>()
     private let groupWasSelectedSubject = PublishSubject<Group>()
 
     private let disposeBag = DisposeBag()
-
+    
+    
 
     init(groupService: GroupServiceType, coordinator: SceneCoordinatorType) {
         self.groupService = groupService
@@ -62,5 +63,5 @@ class GroupsViewModel: ViewModelType {
     }
     var groups: Observable<Results<Group>>{
         return self.groupService.groups()
-    }
+    }    
 }

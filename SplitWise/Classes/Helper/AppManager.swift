@@ -12,7 +12,9 @@ class AppManager: NSObject {
     // MARK: - Singleton
     static let shared = AppManager()
     var sceneCoordinator: SceneCoordinatorType?
-    
+    func migrationDatabase() {
+        PersistenceService.shared.autoMigration()
+    }
     func startFromGroupsScene(sceneCoordinator: SceneCoordinatorType) {
         let groupService = GroupService()
         let groupsViewModel = GroupsViewModel(groupService: groupService,
