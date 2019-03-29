@@ -43,6 +43,10 @@ extension Scene {
             let vc = storyboard.instantiateViewController(withIdentifier: "ExpenseDiaryViewController") as! ExpenseDiaryViewController
             vc.bindViewModel(to: viewModel)
             return vc
+        case .balance(let viewModel):
+            let vc = storyboard.instantiateViewController(withIdentifier: "BalanceViewController") as! BalanceViewController
+            vc.bindViewModel(to: viewModel)
+            return vc
         }
     }
 }

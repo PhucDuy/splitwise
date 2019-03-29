@@ -9,9 +9,19 @@
 import Foundation
 import RealmSwift
 
+enum AggregateStatus {
+    case none
+    case sameLenderAndLendee
+    case lenderIsLendee
+    case sameLenderDifferentLendee
+    case sameLendeeDifferentLender
+}
+
 struct TransactionData {
+    var lender: Person?
     var lendee: Person?
     var amount: Double
+
 }
 
 
@@ -29,6 +39,7 @@ class Transaction: Object {
         return transaction
     }
     func toData() -> TransactionData {
-        return TransactionData(lendee: self.lendee, amount: self.amount)
+        return TransactionData(lender: lender, lendee: self.lendee, amount: self.amount)
     }
+
 }

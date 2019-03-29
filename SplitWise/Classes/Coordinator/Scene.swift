@@ -15,5 +15,6 @@ enum Scene {
     case expenses(ExpensesViewModel)
     case editExpenses(EditExpenseViewModel)
     case expenseDairy(ExpenseDairyViewModel)
+    case balance(BalanceViewModel)
 }
 

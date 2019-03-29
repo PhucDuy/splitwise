@@ -117,7 +117,7 @@ class EditExpenseViewModel: ViewModelType {
             }
         } else {
             self.transactions = self.group.members.map { (person) -> TransactionData in
-                return TransactionData(lendee: person, amount: 0)
+                return TransactionData(lender: nil, lendee: person, amount: 0)
             }
         }
     }

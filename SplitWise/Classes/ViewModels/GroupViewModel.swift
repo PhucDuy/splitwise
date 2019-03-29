@@ -48,7 +48,11 @@ class GroupViewModel: ViewModelType {
             }).disposed(by: disposeBag)
         balanceButtonWasClickedSubject
             .subscribe(onNext: { [weak self](observer) in
-            
+                guard let strongSelf = self else { return }
+
+                let viewModel = BalanceViewModel(coordinator: strongSelf.sceneCoordinator,
+                                                 group: strongSelf.group)
+                strongSelf.sceneCoordinator.transition(to: .balance(viewModel), type: .push)
             }).disposed(by: disposeBag)
         
         expensesButtonWasClickedSubject

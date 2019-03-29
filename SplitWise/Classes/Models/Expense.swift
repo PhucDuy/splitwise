@@ -38,5 +38,12 @@ class Expense: Object {
     override static func primaryKey() -> String? {
         return "uid"
     }
+    func transactionArray() -> [TransactionData] {
+        return self.transactions.toArray().map({ (transaction) -> TransactionData in
+            return TransactionData(lender: transaction.lender,
+                                   lendee: transaction.lendee,
+                                   amount: transaction.amount)
+        })
+    }
 
 }
